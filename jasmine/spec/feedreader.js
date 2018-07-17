@@ -70,8 +70,6 @@ $(function() {
      * should have two expectations: does the menu display when
      * clicked and does it hide when clicked again.
      */
-
-
     it('menu displays/hides when icon clicked', () => {
       $('.menu-icon-link').trigger('click');
       if ($('.body').hasClass('menu-hidden')) {
@@ -84,12 +82,27 @@ $(function() {
 
   /* TODO: Write a new test suite named "Initial Entries" */
 
-  /* TODO: Write a test that ensures when the loadFeed
-   * function is called and completes its work, there is at least
-   * a single .entry element within the .feed container.
-   * Remember, loadFeed() is asynchronous so this test will require
-   * the use of Jasmine's beforeEach and asynchronous done() function.
-   */
+  describe('Initial Entries', () => {
+
+    /* TODO: Write a test that ensures when the loadFeed
+     * function is called and completes its work, there is at least
+     * a single .entry element within the .feed container.
+     * Remember, loadFeed() is asynchronous so this test will require
+     * the use of Jasmine's beforeEach and asynchronous done() function.
+     */
+
+    beforeEach(done => {
+      loadFeed(0, done);
+      console.log($('.entry'));
+    });
+
+    it('there is at least one entry in the feed', (done) => {
+      expect($('.feed').find('.entry').length).not.toBe(0);
+      done();
+    });
+  });
+
+
 
   /* TODO: Write a new test suite named "New Feed Selection" */
 
