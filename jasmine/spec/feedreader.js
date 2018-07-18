@@ -90,6 +90,7 @@ $(function() {
      * Remember, loadFeed() is asynchronous so this test will require
      * the use of Jasmine's beforeEach and asynchronous done() function.
      */
+    //async  
     beforeEach(done => {
       loadFeed(0, done);
     });
@@ -102,6 +103,7 @@ $(function() {
 
   /* TODO: Write a new test suite named "New Feed Selection" */
   describe('New Feed Selection', () => {
+    // variables to distinguish entries
     let firstEntry,
       nextEntry;
     /* TODO: Write a test that ensures when a new feed is loaded
@@ -109,12 +111,14 @@ $(function() {
      * Remember, loadFeed() is asynchronous.
      */
     beforeEach(done => {
+      //clear feed
       $('.feed').empty();
+      // first entry
       loadFeed(0, () => {
         firstEntry = $('.feed').find(allFeeds.url);
         done();
       });
-
+      //next entry
       loadFeed(1, () => {
         nextEntry = $('.feed').find(allFeeds.url);
         done();
