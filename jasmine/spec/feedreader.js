@@ -43,11 +43,9 @@ $(function() {
     // and is hidden when clicked again
     it('menu displays/hides when icon clicked', () => {
       $('.menu-icon-link').click();
-      if ($('.body').hasClass('menu-hidden')) {
-        expect($('.body').hasClass('menu-hidden')).toBe(true);
-      } else {
-        expect($('.body').hasClass('menu-hidden')).toBe(false);
-      }
+      expect($('.body').hasClass('menu-hidden')).toBe(false);
+      $('.menu-icon-link').click();
+      expect($('.body').hasClass('menu-hidden')).toBe(true);
     });
   });
 
