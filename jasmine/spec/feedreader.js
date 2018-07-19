@@ -59,9 +59,8 @@ $(function() {
       loadFeed(0, done);
     });
 
-    it('there is at least one entry in the feed', (done) => {
+    it('there is at least one entry in the feed', () => {
       expect($('.feed .entry').length).toBeGreaterThan(0);
-      done();
     });
   });
 
