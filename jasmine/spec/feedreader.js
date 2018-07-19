@@ -76,15 +76,15 @@ $(function() {
     beforeEach(done => {
       //clear feed
       $('.feed').empty();
-      // first entry
+      //load first entry
       loadFeed(0, () => {
         firstEntry = $('.feed').find(allFeeds.url);
-        done();
-      });
-      //next entry
-      loadFeed(1, () => {
-        nextEntry = $('.feed').find(allFeeds.url);
-        done();
+
+        //load next entry
+        loadFeed(1, () => {
+          nextEntry = $('.feed').find(allFeeds.url);
+          done();
+        });
       });
     });
 
