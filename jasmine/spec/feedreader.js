@@ -60,7 +60,7 @@ $(function() {
     });
 
     it('there is at least one entry in the feed', (done) => {
-      expect($('.feed').find('.entry').length).not.toBe(0);
+      expect($('.feed .entry').length).toBeGreaterThan(0);
       done();
     });
   });
