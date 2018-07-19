@@ -64,15 +64,14 @@ $(function() {
     });
   });
 
-  /* TODO: Write a new test suite named "New Feed Selection" */
+  // test suite New Feed Selection
   describe('New Feed Selection', () => {
     // variables to distinguish entries
     let firstEntry,
       nextEntry;
-    /* TODO: Write a test that ensures when a new feed is loaded
-     * by the loadFeed function that the content actually changes.
-     * Remember, loadFeed() is asynchronous.
-     */
+
+    // test that ensures when a new feed is loaded by LoadFeed it is different
+    // than the previously loaded feed
     beforeEach(done => {
       //clear feed
       $('.feed').empty();
