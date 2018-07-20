@@ -1,6 +1,6 @@
 // Jasmine spec file
 
-// jQuery init
+// IIFE
 $(function() {
 
   //  test suite of RSS feeds
@@ -72,16 +72,17 @@ $(function() {
 
     // test that ensures when a new feed is loaded by LoadFeed it is different
     // than the previously loaded feed
+    //async test
     beforeEach(done => {
       //clear feed
       $('.feed').empty();
       //load first entry
       loadFeed(0, () => {
-        firstEntry = $('.feed').find(allFeeds.url);
+        firstEntry = $('.feed').html();
 
         //load next entry
         loadFeed(1, () => {
-          nextEntry = $('.feed').find(allFeeds.url);
+          nextEntry = $('.feed').html();
           done();
         });
       });
